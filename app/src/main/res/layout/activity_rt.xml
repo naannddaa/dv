@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Container untuk Fragment -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:background="@color/grey2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigationView"/>
+
+    <!-- BottomNavigationView -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemTextColor="@color/black"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_bottomnav"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

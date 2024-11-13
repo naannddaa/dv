@@ -1,0 +1,299 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundprofil"
+    tools:ignore="MissingConstraints">
+
+    <RelativeLayout
+        android:id="@+id/profileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <!-- Camera Button Overlay -->
+
+        <!-- Circle Shape for Profile Picture -->
+
+        <ImageView
+            android:id="@+id/imageviewadd"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/fotoprofil"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile" />
+
+        <Button
+            android:id="@+id/btnupload"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignStart="@+id/imageviewadd"
+            android:layout_marginStart="87dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/ic_kamera"
+            android:backgroundTint="@android:color/white"
+            app:startIconTint="@color/blue" />
+
+
+
+
+    </RelativeLayout>
+
+    <!-- Camera Button Overlay -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_login"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_below="@id/profileImage"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="25dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- No. Kartu Keluarga Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nkkInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="No. Kartu Keluarga"
+                    android:padding="5dp"
+                    android:textColorHint="@color/blue"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="19dp"
+                    app:boxCornerRadiusBottomStart="19dp"
+                    app:startIconDrawable="@drawable/ic_family"
+                    app:startIconTint="@color/blue"
+                    app:boxCornerRadiusTopEnd="19dp"
+                    app:boxCornerRadiusTopStart="19dp"
+                    app:boxStrokeColor="@color/blue"
+                    app:hintTextColor="@color/bluefiled">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/t_nkk"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint=""
+                        android:paddingStart="45dp"
+                        android:inputType="number"
+                        android:maxLength="20"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- No. Induk Kependudukan Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nikinputlayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="No. Induk Kependudukan"
+                    android:padding="5dp"
+                    android:textColorHint="@color/blue"
+                    app:boxBackgroundMode="outline"
+                    app:startIconDrawable="@drawable/card"
+                    app:startIconTint="@color/blue"
+                    app:boxCornerRadiusBottomEnd="19dp"
+                    app:boxCornerRadiusBottomStart="19dp"
+                    app:boxCornerRadiusTopEnd="19dp"
+                    app:boxCornerRadiusTopStart="19dp"
+                    app:boxStrokeColor="@color/blue"
+                    app:hintTextColor="@color/bluefiled"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/t_nik"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint=""
+                        android:paddingStart="45dp"
+                        android:inputType="number"
+                        android:maxLength="20"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Nama Lengkap Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/namaInputlayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama Lengkap"
+                    android:padding="5dp"
+                    android:textColorHint="@color/blue"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="19dp"
+                    app:boxCornerRadiusBottomStart="19dp"
+                    app:boxCornerRadiusTopEnd="19dp"
+                    app:boxCornerRadiusTopStart="19dp"
+                    app:boxStrokeColor="@color/blue"
+                    app:hintTextColor="@color/bluefiled"
+                    app:startIconDrawable="@drawable/ic_person"
+                    app:startIconTint="@color/blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/t_nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint=""
+                        android:paddingStart="45dp"
+                        android:inputType="textPersonName"
+                        android:maxLength="80"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- No. Telepon Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/notelpinputlayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="No. Telepon"
+                    android:padding="5dp"
+                    android:textColorHint="@color/blue"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="19dp"
+                    app:boxCornerRadiusBottomStart="19dp"
+                    app:boxCornerRadiusTopEnd="19dp"
+                    app:boxCornerRadiusTopStart="19dp"
+                    app:boxStrokeColor="@color/blue"
+                    app:hintTextColor="@color/bluefiled"
+                    app:startIconDrawable="@drawable/ic_phone"
+                    app:startIconTint="@color/blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/t_notelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint=""
+                        android:paddingStart="45dp"
+                        android:inputType="phone"
+                        android:maxLength="15"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:gravity="start">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/t_editnotelp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:drawableStart="@drawable/ic_edit"
+                        android:text="Edit No. Telepon"
+                        android:textColor="@color/blue"
+                        android:textSize="13sp"
+                        app:startIconTint="@color/blue"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        <!-- Pop-up Container - Initially set to "gone" to be hidden -->
+        <RelativeLayout
+            android:id="@+id/popupContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:background="@color/popupBackgroundOverlay">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/popupbg"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit Nomor Telepon"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Nomor Telepon"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginTop="15dp" />
+
+                <Button
+                    android:id="@+id/b_simpan"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="Simpan"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+                <Button
+                    android:id="@+id/b_batal"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/red"
+                    android:text="Batal"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/btnlogout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card_login"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="103dp"
+        android:backgroundTint="@color/bluefiled"
+        android:text="Logout"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+</RelativeLayout>

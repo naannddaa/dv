@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "372372898034",
+    "project_id": "dvtesting-27ac0",
+    "storage_bucket": "dvtesting-27ac0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372372898034:android:a2011830384fc5a3e3d06b",
+        "android_client_info": {
+          "package_name": "com.amelia.dv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-8_MNI_iLiGgNjik5p4qfc6Uo-bmcxmM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

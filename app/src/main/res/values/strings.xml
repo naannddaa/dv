@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">dv</string>
+    <string name="back_arrow">Kembali</string>
+    <string name="show_password">Menunjukkan Password</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <style name="ActiveTextStylestatus" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="InactiveTextStylestatus" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="ActiveTextStyle" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="InactiveTextStyle" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

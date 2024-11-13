@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "388113491094",
+    "firebase_url": "https://digital-village-d727f-default-rtdb.firebaseio.com",
+    "project_id": "digital-village-d727f",
+    "storage_bucket": "digital-village-d727f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388113491094:android:a5b67eccf480c08c904eb7",
+        "android_client_info": {
+          "package_name": "com.amelia.dv"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPCpwuLwZxy9ELjB8ZDfJxtHMJMvaSsPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

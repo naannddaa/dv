@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_verif_code"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_cv"
+    tools:context=".CodeVerification">
+
+    <!-- Ikon Kembali -->
+    <ImageView
+        android:id="@+id/icon_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="60dp"
+        android:contentDescription="@string/back_arrow"
+        android:scaleType="fitCenter"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintEnd_toStartOf="@+id/tv_verif_title"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_verif_title" />
+
+    <!-- Judul -->
+    <TextView
+        android:id="@+id/tv_verif_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/kanit_medium"
+        android:text="KODE VERIFIKASI"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Instruksi -->
+    <TextView
+        android:id="@+id/tv_instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="296dp"
+        android:text="Masukkan kode yang dikirim ke nomor Anda"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_verif_title" />
+
+    <!-- Kontainer Input OTP -->
+    <LinearLayout
+        android:id="@+id/otp_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_instruction">
+
+        <!-- Digit OTP 1 -->
+        <EditText
+            android:id="@+id/input_digit_1"
+            android:layout_width="48dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:background="@drawable/box_otp"
+            android:textColor="#000000"
+            android:imeOptions="actionNext" />
+
+        <!-- Digit OTP 2 -->
+        <EditText
+            android:id="@+id/input_digit_2"
+            android:layout_width="48dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:background="@drawable/box_otp"
+            android:textColor="#000000"
+            android:imeOptions="actionNext" />
+
+        <!-- Digit OTP 3 -->
+        <EditText
+            android:id="@+id/input_digit_3"
+            android:layout_width="48dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:background="@drawable/box_otp"
+            android:textColor="#000000"
+            android:imeOptions="actionNext" />
+
+        <!-- Digit OTP 4 -->
+        <EditText
+            android:id="@+id/input_digit_4"
+            android:layout_width="48dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:background="@drawable/box_otp"
+            android:textColor="#000000"
+            android:imeOptions="actionNext" />
+
+        <!-- Digit OTP 5 -->
+        <EditText
+            android:id="@+id/input_digit_5"
+            android:layout_width="48dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp"
+            android:background="@drawable/box_otp"
+            android:textColor="#000000"
+            android:imeOptions="actionDone" />
+    </LinearLayout>
+
+    <!-- Tombol Verifikasi -->
+    <Button
+        android:id="@+id/btn_verif"
+        android:layout_width="306dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Verifikasi"
+        android:background="@drawable/button_background"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/bluebutton"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/otp_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

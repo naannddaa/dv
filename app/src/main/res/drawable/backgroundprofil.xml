@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Lapisan pertama (warna bawah) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#55ACEE" /> <!-- Warna bawah -->
+        </shape>
+    </item>
+
+    <!-- Lapisan kedua (warna atas dengan margin) -->
+    <item android:top="100dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" /> <!-- Warna atas -->
+        </shape>
+    </item>
+</layer-list>

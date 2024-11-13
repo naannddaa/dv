@@ -1,0 +1,503 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="status.DetailSuratFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewpengajuansurat"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/t_pengajuan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="7dp"
+                        android:paddingBottom="10dp"
+                        android:text="Pengajuan Surat Dari:"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" /> <!-- Corrected from dp to sp -->
+
+                    <!--            nama lengkap-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/namaInputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Nama Lengkap"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_nama"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="textPersonName"
+                            android:maxLength="80"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!--t_NIK-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nikinputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="No. Induk Kependudukan"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/grey"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_nik"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="number"
+                            android:maxLength="20"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!--            tempat tgl lahir-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tempatlahir"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Tempat Tanggal Lahir"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_tempat"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="30"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--    JENIS KELAMIN-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/jeniskelamninputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Jenis kelamin"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_jeniskelamin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="80"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--    KEWARGANEGARAAN-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/kewarganegaraaninputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Kewarganegaraan"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_kewarganegaraan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="80"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!--            AGAMA-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/agamainputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Agama"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_agama"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="15"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!--            STATUS PERKAWINAN-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/kawininputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Status Perkawinan"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_kawin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="20"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--            PEKERJAAN-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/pekerjaaninputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Pekerjaan"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_pekerjaan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="40"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--            PEKERJAAN-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/pendidikaninputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Pendidikan"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_pendidikan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="40"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!--            PEKERJAAN-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ayahinputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Nama Ayah"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_ayah"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="40"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--            PEKERJAAN-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ibuinputlayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:hint="Nama Ibu"
+                        android:padding="5dp"
+                        android:textColorHint="@color/grey"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxStrokeColor="@color/blue"
+                        app:hintTextColor="@color/bluefiled">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_ibu"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:inputType="text"
+                            android:maxLength="40"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textColorHint="@color/black"
+                            android:textSize="13sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!--            KEPERLUAN-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/keperluaninputlayout"
+                        android:layout_gravity="center"
+                        android:layout_width="310dp"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/grey"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="19dp"
+                        app:boxCornerRadiusTopEnd="19dp"
+                        app:boxCornerRadiusBottomStart="19dp"
+                        app:boxCornerRadiusBottomEnd="19dp"
+                        android:hint="Keperluan"
+                        app:hintTextColor="@color/bluefiled"
+                        app:boxStrokeColor="@color/blue"
+                        android:padding="5dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/t_keperluan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint=""
+                            android:text=""
+                            android:textColorHint="@color/black"
+                            android:inputType="text"
+                            android:maxLength="100"
+                            android:outlineSpotShadowColor="@color/bluefiled"
+                            android:shadowColor="@color/blue"
+                            android:textColor="@color/grey"
+                            android:textSize="13sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- Upload file section -->
+                    <LinearLayout
+                        android:id="@+id/t_uploadfile"
+                        android:layout_width="298dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/custom_input"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/t_uploadfile_icon"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            android:scaleType="centerCrop"
+                            app:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/gambar_uploadfile"
+                            app:tint="@null" />
+
+                        <TextView
+                            android:id="@+id/tv_upfile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:hint="Unggah KTP / KIA"
+                            android:paddingTop="10dp"
+                            android:textColorHint="@color/grey"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                    <!-- Button SETUJU -->
+                        <Button
+                            android:id="@+id/b_setuju"
+                            android:layout_width="140dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="16dp"
+                            android:backgroundTint="@color/bluebutton"
+                            android:text="Setuju"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                    <!-- Button TOLAK -->
+                    <Button
+                        android:id="@+id/b_tolak"
+                        android:layout_width="140dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="24dp"
+                        android:backgroundTint="@color/red"
+                        android:text="Tolak"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+</LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
