@@ -84,7 +84,7 @@ public class FragmentProfil extends Fragment {
 
         // Initialize SharedPreferences and retrieve user_id (NIK)
         sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        String nik = sharedPreferences.getString("user_id", null);
+        String nik = sharedPreferences.getString("niklogin", null);
 
         if (nik != null) {
             tNik.setText(nik);

@@ -68,7 +68,7 @@ public class Login extends Fragment {
                                     // Save NIK to SharedPreferences after successful login
                                     SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("nik", nik);  // Save NIK to SharedPreferences
+                                    editor.putString("niklogin", nik);  // Save NIK to SharedPreferences
                                     editor.apply();
 
                                     // Navigate to MainActivityRt and send NIK
@@ -77,8 +77,14 @@ public class Login extends Fragment {
                                     intent.putExtra("nik", nik);  // Pass NIK to next activity
                                     startActivity(intent);
                                     getActivity().finish(); // Close current activity
+                                } else if (response.equals("Silahkan melakukan aktivasi akun terlebih dahulu")) {
+                                    Toast.makeText(getActivity(), "Silahkan melakukan aktivasi akun terlebih dahulu", Toast.LENGTH_SHORT).show();
+                                } else if (response.equals("Password salah")) {
+                                    Toast.makeText(getActivity(), "Password salah", Toast.LENGTH_SHORT).show();
+                                } else if (response.equals("NIK tidak ditemukan")) {
+                                    Toast.makeText(getActivity(), "NIK tidak ditemukan", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(getActivity(), "Login Gagal! Username atau Password salah.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getActivity(), "Login Gagal! " + response, Toast.LENGTH_SHORT).show();
                                 }
                             },
                             error -> {
