@@ -23,7 +23,7 @@ public class MainActivityRt extends AppCompatActivity
     HomeFragment home = new HomeFragment();
     statusTopNav status = new statusTopNav ();
     SuratFragment surat = new SuratFragment();
-    FragmentProfil profile = new FragmentProfil();
+    com.amelia.dv.FragmentProfil profile = new com.amelia.dv.FragmentProfil();
 
     @SuppressLint("MissingInflatedId")
     @Override

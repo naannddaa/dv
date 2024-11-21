@@ -7,10 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -138,7 +140,7 @@ public class FragmentProfil extends Fragment {
             // Use Glide to load the image into the ImageView as a circle
             Glide.with(this)
                     .load(imageUri)
-                    .circleCrop()  // This makes the image circular
+                    .circleCrop()
                     .into(imageView);
 
             // Upload the image to the server
@@ -153,9 +155,8 @@ public class FragmentProfil extends Fragment {
         }
     }
 
-    // Function to update the phone number in the server
     private void updatePhoneNumber(final String nik, final String noHp) {
-        String url = "http://" + ip + "/CRUDVolley/EditNoTelepon.php";
+        String url = "http://" + ip + "/CRUDVolley/CRUDVolley/EditNoTelepon.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 response -> Toast.makeText(getActivity(), "Nomer Telepon Berhasil Diperbarui", Toast.LENGTH_SHORT).show(),
@@ -172,9 +173,8 @@ public class FragmentProfil extends Fragment {
         requestQueue.add(stringRequest);
     }
 
-    // Function to fetch the profile data from the server
     private void fetchProfileData(String nik) {
-        String url = "http://" + ip + "/CRUDVolley/GetDataProfil.php?nik=" + nik;
+        String url = "http://" + ip + "/CRUDVolley/CRUDVolley/GetDataProfil.php?nik=" + nik;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 response -> {
@@ -188,11 +188,41 @@ public class FragmentProfil extends Fragment {
                             String nikResponse = jsonObject.optString("nik", "");
                             String nama = jsonObject.optString("nama_lengkap", "");
                             String notelp = jsonObject.optString("no_hp", "");
+                            String fotoProfil = jsonObject.optString("foto_profil", "");
 
                             tNkk.setText(noKk);
-                            tNik.setText(nikResponse);  // Use the NIK from the server
+                            tNik.setText(nikResponse);
                             tNama.setText(nama);
                             t_notelp.setText(notelp);
+                            imageView.setImageURI(Uri.parse(fotoProfil));
+
+                            // Menampilkan gambar ke ImageView
+                            if (fotoProfil != null && !fotoProfil.isEmpty()) {
+                                if (isBase64(fotoProfil)) {
+                                    // Jika berupa Base64
+                                    byte[] decodedBytes = Base64.decode(fotoProfil, Base64.DEFAULT);
+                                    Bitmap bitmap = BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+
+                                    if (bitmap != null) {
+                                        Glide.with(requireActivity())
+                                                .load(bitmap)
+                                                .circleCrop()
+                                                .into(imageView);
+                                    } else {
+                                        imageView.setImageResource(R.drawable.ic_profile); // Fallback
+                                    }
+                                } else {
+                                    // Jika berupa URL
+                                    Glide.with(requireActivity())
+                                            .load(fotoProfil)
+                                            .circleCrop()
+                                            .error(R.drawable.ic_profile) // Fallback
+                                            .into(imageView);
+                                }
+                            } else {
+                                // Gambar default jika fotoProfil kosong
+                                imageView.setImageResource(R.drawable.ic_profile);
+                            }
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -204,26 +234,27 @@ public class FragmentProfil extends Fragment {
         requestQueue.add(stringRequest);
     }
 
+
     private void showPopup() {
         String ambilnotelp = t_notelp.getText().toString();
-        editPhoneNumber.setText(ambilnotelp); // Populate popup with current phone number
+        editPhoneNumber.setText(ambilnotelp);
         popupContainer.setVisibility(View.VISIBLE);
     }
 
     private String encodeImageToBase64(Uri imageUri) throws IOException {
         Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), imageUri);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos); // Compress image
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] imageBytes = baos.toByteArray();
         return Base64.encodeToString(imageBytes, Base64.DEFAULT);
     }
 
     private void uploadImageToServer(final String nik, final String imageBase64) {
-        String url = "http://" + ip + "/CRUDVolley/fotoProfile.php";
+        String url = "http://" + ip + "/CRUDVolley/CRUDVolley/fotoProfile.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 response -> Toast.makeText(getActivity(), "Image upload successful", Toast.LENGTH_SHORT).show(),
-                error -> Toast.makeText(getActivity(), "Image upload failed: " + error.toString(), Toast.LENGTH_SHORT).show()) {
+                error -> Toast.makeText(getActivity(), "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show()) {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
@@ -235,4 +266,14 @@ public class FragmentProfil extends Fragment {
 
         requestQueue.add(stringRequest);
     }
+
+    private boolean isBase64(String str) {
+        try {
+            byte[] decodedBytes = Base64.decode(str, Base64.DEFAULT);
+            return decodedBytes.length > 0;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+
 }

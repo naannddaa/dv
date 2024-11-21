@@ -14,10 +14,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp">
 
-        <!-- Camera Button Overlay -->
-
-        <!-- Circle Shape for Profile Picture -->
-
         <ImageView
             android:id="@+id/imageviewadd"
             android:layout_width="120dp"
@@ -37,9 +33,6 @@
             android:background="@drawable/ic_kamera"
             android:backgroundTint="@android:color/white"
             app:startIconTint="@color/blue" />
-
-
-
 
     </RelativeLayout>
 
@@ -213,9 +206,7 @@
                         app:startIconTint="@color/blue"/>
                 </LinearLayout>
 
-
             </LinearLayout>
-
 
         <!-- Pop-up Container - Initially set to "gone" to be hidden -->
         <RelativeLayout
@@ -276,9 +267,6 @@
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-
 
     <!-- Logout Button -->
     <Button
