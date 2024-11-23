@@ -34,6 +34,7 @@ import java.util.Map;
 public class Login extends Fragment {
 
     private EditText etx_nik, etx_password;
+    private TextView tlupapass;
 
     @Nullable
     @Override
@@ -45,6 +46,7 @@ public class Login extends Fragment {
         etx_password = view.findViewById(R.id.input_pass);
         Button btn_lgn = view.findViewById(R.id.btn_login);
         TextView tx_register = view.findViewById(R.id.tv_activate);
+        tlupapass = view.findViewById(R.id.t_lupapassword);
 
         // Login button click event
         btn_lgn.setOnClickListener(v -> {
@@ -126,6 +128,13 @@ public class Login extends Fragment {
                     .commit();
         });
 
+        tlupapass.setOnClickListener(v -> {
+            // Replace current fragment with RegisterFragment
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new ForgotPassword()) // Use the appropriate container ID
+                    .addToBackStack(null) // Optional: adds the transaction to the back stack
+                    .commit();
+        });
         return view;
     }
 

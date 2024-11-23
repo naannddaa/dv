@@ -155,7 +155,7 @@ public class FragmentProfil extends Fragment {
         }
     }
 
-    private void updatePhoneNumber(final String nik, final String noHp) {
+    private void updatePhoneNumber(final String nik, final String Email) {
         String url = "http://" + ip + "/CRUDVolley/CRUDVolley/EditNoTelepon.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
@@ -165,7 +165,7 @@ public class FragmentProfil extends Fragment {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("nik", nik);
-                params.put("no_hp", noHp);
+                params.put("email", Email);
                 return params;
             }
         };
@@ -187,7 +187,7 @@ public class FragmentProfil extends Fragment {
                             String noKk = jsonObject.optString("no_kk", "");
                             String nikResponse = jsonObject.optString("nik", "");
                             String nama = jsonObject.optString("nama_lengkap", "");
-                            String notelp = jsonObject.optString("no_hp", "");
+                            String notelp = jsonObject.optString("email", "");
                             String fotoProfil = jsonObject.optString("foto_profil", "");
 
                             tNkk.setText(noKk);

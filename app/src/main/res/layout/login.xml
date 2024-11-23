@@ -83,6 +83,18 @@
             android:textSize="13sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/t_lupapassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pass"
+        android:layout_alignRight="@+id/pass"
+        android:layout_marginBottom="-19dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Lupa Password"
+        android:textColor="@color/blueterang"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="215dp"
